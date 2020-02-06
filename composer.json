@@ -11,5 +11,13 @@
             "email": "puleeno@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Jankx\\Mobile\\Layout\\": "src/"
+        },
+        "files": [
+            "mobile-layout.php"
+        ]
+    }
 }

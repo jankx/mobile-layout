@@ -1,0 +1,126 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "1db7ce048b74d9ae2970dcb0afd75ead",
+    "packages": [
+        {
+            "name": "jankx/asset",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jankx/asset.git",
+                "reference": "4f43b09b0f47969b0f0a476716f5939bd92d34de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jankx/asset/zipball/4f43b09b0f47969b0f0a476716f5939bd92d34de",
+                "reference": "4f43b09b0f47969b0f0a476716f5939bd92d34de",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jankx\\Asset\\": "src/"
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Puleeno Nguyen",
+                    "email": "puleeno@gmail.com"
+                }
+            ],
+            "description": "Jankx Assets is used to manage CSS, JS, libraries with beautiful syntax",
+            "time": "2019-12-31T02:31:58+00:00"
+        },
+        {
+            "name": "jankx/template",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jankx/template.git",
+                "reference": "11ce6ccee919900aa4af90701a8899e49e7a52f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jankx/template/zipball/11ce6ccee919900aa4af90701a8899e49e7a52f5",
+                "reference": "11ce6ccee919900aa4af90701a8899e49e7a52f5",
+                "shasum": ""
+            },
+            "require": {
+                "jankx/ui-framework": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jankx\\Template\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Puleeno Nguyen",
+                    "email": "puleeno@gmail.com"
+                }
+            ],
+            "description": "Jankx template manager usable to load template with support override, caching",
+            "time": "2020-01-12T16:53:44+00:00"
+        },
+        {
+            "name": "jankx/ui-framework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jankx/ui-framework.git",
+                "reference": "bedf5ec3b7f7d5437d8fab36f2a6acd1eb0e9a01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jankx/ui-framework/zipball/bedf5ec3b7f7d5437d8fab36f2a6acd1eb0e9a01",
+                "reference": "bedf5ec3b7f7d5437d8fab36f2a6acd1eb0e9a01",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jankx\\UI\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Puleeno Nguyen",
+                    "email": "puleeno@gmail.com"
+                }
+            ],
+            "description": "Jankx UI framework integrate with popular CSS frameworks",
+            "time": "2020-01-13T03:44:54+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "jankx/asset": 20,
+        "jankx/template": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

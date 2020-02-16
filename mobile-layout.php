@@ -8,3 +8,19 @@
  * Description: Create mobile
  */
 
+use Jankx\Mobile\Layout\LayoutManager;
+
+if ( ! class_exists( LayoutManager::class ) ) {
+	$composer = sprintf( '%s/vendor/autoload.php' );
+	if ( ! file_exists( $composer ) ) {
+		return;
+	}
+	require_once $composer;
+}
+if ( ! function_exists( 'jankx_mobile_layout' ) ) {
+	function jankx_mobile_layout() {
+		return LayoutManager::instance();
+	}
+}
+
+$GLOBALS['jankx_mobile'] = jankx_mobile_layout();

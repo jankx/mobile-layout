@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1db7ce048b74d9ae2970dcb0afd75ead",
+    "content-hash": "047c1c3ca15001463f5a1d092e334e90",
     "packages": [
         {
             "name": "jankx/asset",
@@ -41,6 +41,42 @@
             ],
             "description": "Jankx Assets is used to manage CSS, JS, libraries with beautiful syntax",
             "time": "2019-12-31T02:31:58+00:00"
+        },
+        {
+            "name": "jankx/post-layout",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jankx/post-layout.git",
+                "reference": "f99c7dab16035fc7cdf7da5e96ada5e1fd9c64f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jankx/post-layout/zipball/f99c7dab16035fc7cdf7da5e96ada5e1fd9c64f9",
+                "reference": "f99c7dab16035fc7cdf7da5e96ada5e1fd9c64f9",
+                "shasum": ""
+            },
+            "require": {
+                "jankx/template": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jankx\\PostLayout\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Puleeno Nguyen",
+                    "email": "puleeno@gmail.com"
+                }
+            ],
+            "description": "WordPress post and custom post type layout generator",
+            "time": "2020-02-22T06:57:17+00:00"
         },
         {
             "name": "jankx/template",
@@ -117,7 +153,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "jankx/asset": 20,
-        "jankx/template": 20
+        "jankx/template": 20,
+        "jankx/post-layout": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -4,6 +4,7 @@
     "type": "library",
     "require": {
         "jankx/asset": "dev-master",
+        "jankx/post-layout": "dev-master",
         "jankx/template": "dev-master"
     },
     "license": "MIT",

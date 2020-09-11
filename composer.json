@@ -3,9 +3,7 @@
     "description": "Create another template for mobile with Jankx theme framework",
     "type": "library",
     "require": {
-        "jankx/asset": "dev-master",
-        "jankx/post-layout": "dev-master",
-        "jankx/template": "dev-master"
+        "jankx/core": "dev-master"
     },
     "license": "MIT",
     "authors": [

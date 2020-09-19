@@ -1,2 +1,4 @@
-# mobile-layout
-Create another template for mobile with foxy theme framework
+Jankx Mobile Layout
+=
+
+Create another template for mobile with Jankx Framework

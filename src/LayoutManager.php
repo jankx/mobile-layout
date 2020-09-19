@@ -18,6 +18,7 @@ if (!class_exists('LayoutManager')) {
         {
             $this->defineConstants();
             $this->loadHelpers();
+            $this->initFeatures();
         }
 
         private function define($name, $value)
@@ -36,6 +37,14 @@ if (!class_exists('LayoutManager')) {
         public function loadHelpers()
         {
             require_once JANKX_MOBILE_LAYOUT_ROOT . '/helpers/mobile-helpers.php';
+        }
+
+        public function initFeatures()
+        {
+            $swicher = new Switcher();
+
+            // Load Jankx switcher via action hook
+            add_action('after_setup_theme', array($swicher, 'switch'));
         }
     }
 }

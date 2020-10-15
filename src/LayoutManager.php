@@ -44,7 +44,7 @@ if (!class_exists('LayoutManager')) {
             $swicher = new Switcher();
 
             // Load Jankx switcher via action hook
-            add_action('after_setup_theme', array($swicher, 'switch'));
+            add_action('after_setup_theme', array($swicher, 'switchLayout'));
         }
     }
 }

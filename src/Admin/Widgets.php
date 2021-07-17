@@ -1,0 +1,4 @@
+<?php
+
+namespace Jankx\MobileLayout;
+

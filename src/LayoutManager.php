@@ -1,5 +1,5 @@
 <?php
-namespace Jankx\Mobile\Layout;
+namespace Jankx\MobileLayout;
 
 if (!class_exists('LayoutManager')) {
     class LayoutManager

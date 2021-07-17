@@ -16,7 +16,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Jankx\\Mobile\\Layout\\": "src/"
+            "Jankx\\MobileLayout\\": "src/"
         },
         "files": [
             "mobile-layout.php"

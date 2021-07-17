@@ -8,7 +8,7 @@
  * Description: Create mobile
  */
 
-use Jankx\Mobile\Layout\LayoutManager;
+use Jankx\MobileLayout\LayoutManager;
 
 define('JANKX_MOBILE_TEMPLATE_LOADER', __FILE__);
 

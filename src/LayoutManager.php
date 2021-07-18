@@ -41,8 +41,12 @@ if (!class_exists('LayoutManager')) {
 
         public function initFeatures()
         {
-            $swicher = new Switcher();
+            die('zo');
+            if (wp_is_request('admin')) {
+                new Admin();
+            }
 
+            $swicher = new Switcher();
             // Load Jankx switcher via action hook
             add_action('after_setup_theme', array($swicher, 'switchLayout'));
         }

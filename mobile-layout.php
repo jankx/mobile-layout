@@ -10,15 +10,18 @@
 
 use Jankx\MobileLayout\LayoutManager;
 
-define('JANKX_MOBILE_TEMPLATE_LOADER', __FILE__);
+if (!defined('JANKX_MOBILE_TEMPLATE_LOADER')) {
+    define('JANKX_MOBILE_TEMPLATE_LOADER', __FILE__);
+}
 
 if (! class_exists(LayoutManager::class)) {
-    $composer = sprintf('%s/vendor/autoload.php');
+    $composer = sprintf('%s/vendor/autoload.php', dirname(JANKX_MOBILE_TEMPLATE_LOADER));
     if (! file_exists($composer)) {
         return;
     }
     require_once $composer;
 }
+
 if (! function_exists('jankx_mobile_layout')) {
     function jankx_mobile_layout()
     {

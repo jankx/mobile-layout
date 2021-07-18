@@ -1,6 +1,8 @@
 <?php
 namespace Jankx\MobileLayout;
 
+use Jankx\MobileLayout\Frontend\Widgets;
+
 if (!class_exists('LayoutManager')) {
     class LayoutManager
     {
@@ -31,7 +33,10 @@ if (!class_exists('LayoutManager')) {
 
         public function defineConstants()
         {
-            $this->define('JANKX_MOBILE_LAYOUT_ROOT', dirname(JANKX_MOBILE_TEMPLATE_LOADER));
+            $this->define(
+                'JANKX_MOBILE_LAYOUT_ROOT',
+                dirname(__DIR__)
+            );
         }
 
         public function loadHelpers()
@@ -45,9 +50,18 @@ if (!class_exists('LayoutManager')) {
                 new Admin();
             }
 
-            $swicher = new Switcher();
+            $widgets = new Widgets();
+            add_action(
+                'after_setup_theme',
+                array($widgets, 'loadMobileWidgets')
+            );
+
             // Load Jankx switcher via action hook
-            add_action('after_setup_theme', array($swicher, 'switchLayout'));
+            $swicher = new Switcher();
+            add_action(
+                'after_setup_theme',
+                array($swicher, 'switchLayout')
+            );
         }
     }
 }

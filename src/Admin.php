@@ -1,14 +1,19 @@
 <?php
 namespace Jankx\MobileLayout;
 
+use Jankx\MobileLayout\Admin\Widgets\WidgetManager;
+
 class Admin
 {
     public function __construct()
     {
-        add_action('current_screen', array($this, 'add_link_enable_mobile_widgets'));
+        add_action('after_setup_theme', array($this, 'load'));
     }
 
-    public function add_link_enable_mobile_widgets($screen)
+    public function load()
     {
+        // Load widget manager
+        $widget_manager = new WidgetManager();
+        $widget_manager->manage();
     }
 }

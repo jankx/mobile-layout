@@ -41,7 +41,6 @@ if (!class_exists('LayoutManager')) {
 
         public function initFeatures()
         {
-            die('zo');
             if (wp_is_request('admin')) {
                 new Admin();
             }

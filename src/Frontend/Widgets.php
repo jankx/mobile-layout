@@ -1,6 +1,7 @@
 <?php
 namespace Jankx\MobileLayout\Frontend;
 
+use Jankx;
 use Jankx\MobileLayout\Admin\Widgets\WidgetManager;
 
 class Widgets
@@ -8,7 +9,14 @@ class Widgets
     public function loadMobileWidgets()
     {
         if (wp_is_request('frontend') && jankx_is_mobile()) {
-            add_filter('pre_option_sidebars_widgets', array($this, 'load'), 10, 3);
+            $active_template = get_option('template');
+            $status = get_option(
+                sprintf('jankx_mobile_widgets_%s_status', $active_template),
+                false
+            );
+            if ($status === 'enable') {
+                add_filter('pre_option_sidebars_widgets', array($this, 'load'), 10, 3);
+            }
         }
 
         if (is_admin()) {

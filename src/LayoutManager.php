@@ -54,7 +54,8 @@ if (!class_exists('LayoutManager')) {
             $swicher = new Switcher();
             add_action(
                 'after_setup_theme',
-                array($swicher, 'switchLayout')
+                array($swicher, 'switchLayout'),
+                5
             );
         }
     }

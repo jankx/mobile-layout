@@ -19,7 +19,6 @@ if (!class_exists('LayoutManager')) {
         public function __construct()
         {
             $this->defineConstants();
-            $this->loadHelpers();
             $this->initFeatures();
         }
 
@@ -37,11 +36,6 @@ if (!class_exists('LayoutManager')) {
                 'JANKX_MOBILE_LAYOUT_ROOT',
                 dirname(__DIR__)
             );
-        }
-
-        public function loadHelpers()
-        {
-            require_once JANKX_MOBILE_LAYOUT_ROOT . '/helpers/mobile-helpers.php';
         }
 
         public function initFeatures()

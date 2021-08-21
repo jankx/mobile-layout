@@ -103,7 +103,7 @@ class WidgetManager
             return $value;
         }
         $referer = parse_url($_SERVER['HTTP_REFERER']);
-        if (strpos($referer, '/wp-admin/widgets.php') === false) {
+        if (strpos($referer['path'], '/wp-admin/widgets.php') === false) {
             return $value;
         }
 

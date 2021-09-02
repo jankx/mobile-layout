@@ -2,11 +2,14 @@
 namespace Jankx\MobileLayout;
 
 use Jankx\MobileLayout\Frontend\Widgets;
+use Jankx\MobileLayout\Detector;
 
 if (!class_exists('LayoutManager')) {
     class LayoutManager
     {
         protected static $instance;
+
+        protected $detector;
 
         public static function instance()
         {
@@ -50,12 +53,11 @@ if (!class_exists('LayoutManager')) {
                 array($widgets, 'loadMobileWidgets')
             );
 
-            // Load Jankx switcher via action hook
-            $swicher = new Switcher();
+            // Detect the page is show mobile templates or is mobile template
+            $this->detector = Detector::getInstance();
             add_action(
-                'after_setup_theme',
-                array($swicher, 'switchLayout'),
-                5
+                'wp',
+                array($this->detector, 'run')
             );
         }
     }

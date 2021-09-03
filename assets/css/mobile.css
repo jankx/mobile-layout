@@ -1,0 +1,46 @@
+.jankx-mobile .jankx-has-bottom-nav {
+  padding-bottom: 60px;
+}
+
+.jankx-has-bottom-nav .jankx-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #f5f5f5;
+  z-index: 999;
+  display: flex;
+}
+
+.jankx-bottom-nav .bottom-nav-item {
+  flex: 1;
+  font-size: 12px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.jankx-bottom-nav .bottom-nav-item a {
+  display: block;
+}
+.jankx-bottom-nav .bottom-nav-item .nav-image {
+  text-align: center;
+}
+.jankx-bottom-nav .bottom-nav-item .nav-text {
+  text-align: center;
+}
+.jankx-bottom-nav .bottom-nav-item.no-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 5px 2px;
+}
+.jankx-bottom-nav .bottom-nav-item.has-link .nav-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px 2px;
+  width: 100%;
+}
+
+/*# sourceMappingURL=mobile.css.map */

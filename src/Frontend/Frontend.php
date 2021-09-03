@@ -4,6 +4,8 @@ namespace Jankx\MobileLayout\Frontend;
 use Jankx\Component\Constracts\Component;
 use Jankx\MobileLayout\Component\StaticBottomNav;
 use Jankx\MobileLayout\Interfaces\Component\BodyOpenComponent;
+use Jankx\MobileLayout\Interfaces\Component\HasBodyClassComponent;
+use Jankx\MobileLayout\Frontend\TemplateLoader;
 
 class Frontend
 {
@@ -21,6 +23,7 @@ class Frontend
 
     private function __construct()
     {
+        TemplateLoader::createEngine();
     }
 
     protected function getMobileComponents()
@@ -39,6 +42,17 @@ class Frontend
 
         if (is_a($component, BodyOpenComponent::class)) {
             add_action('wp_body_open', array($component, 'render'));
+        }
+        if (is_a($component, HasBodyClassComponent::class)) {
+            $newClasses = $component->getBodyClasses();
+            if ($newClasses) {
+                if (!is_array($newClasses)) {
+                    $newClasses = array($newClasses);
+                }
+                add_filter('body_class', function ($classes) use ($newClasses) {
+                    return array_merge($classes, $newClasses);
+                });
+            }
         }
     }
 

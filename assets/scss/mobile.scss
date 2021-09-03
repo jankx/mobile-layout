@@ -1,0 +1,52 @@
+.jankx-mobile {
+    .jankx-has-bottom-nav {
+        padding-bottom: 60px;
+    }
+}
+.jankx-has-bottom-nav {
+    .jankx-bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #f5f5f5;
+        z-index: 999;
+        display: flex;
+    }
+}
+
+.jankx-bottom-nav {
+    .bottom-nav-item {
+        flex: 1;
+        font-size: 12px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        a {
+            display: block;
+        }
+        .nav-image {
+            text-align: center;
+        }
+        .nav-text {
+            text-align: center;
+        }
+        &.no-link {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+            padding: 5px 2px;
+        }
+        &.has-link {
+            .nav-link {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 5px 2px;
+                width: 100%;
+            }
+        }
+    }
+}

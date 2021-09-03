@@ -10,6 +10,7 @@ class Detector
 {
     private static $instance;
 
+    protected $isMobile;
     protected $detectors;
 
     public static function getInstance()
@@ -57,6 +58,11 @@ class Detector
         );
     }
 
+    public function isMobile()
+    {
+        return boolval($this->isMobile);
+    }
+
     public function getStatus()
     {
         foreach ($this->detectors as $detector) {
@@ -73,7 +79,7 @@ class Detector
             return;
         }
 
-        if ($this->getStatus()) {
+        if (($this->isMobile = $this->getStatus())) {
             add_filter('jankx/device/is_mobile/pre', '__return_true');
             add_filter('jankx/device/is_mobile/template', '__return_true');
 

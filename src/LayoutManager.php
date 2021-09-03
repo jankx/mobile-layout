@@ -3,6 +3,7 @@ namespace Jankx\MobileLayout;
 
 use Jankx\MobileLayout\Frontend\Widgets;
 use Jankx\MobileLayout\Detector;
+use Jankx\MobileLayout\Frontend\Frontend;
 
 if (!class_exists('LayoutManager')) {
     class LayoutManager
@@ -10,6 +11,7 @@ if (!class_exists('LayoutManager')) {
         protected static $instance;
 
         protected $detector;
+        protected $frontend;
 
         public static function instance()
         {
@@ -59,6 +61,16 @@ if (!class_exists('LayoutManager')) {
                 'wp',
                 array($this->detector, 'run')
             );
+
+            add_action('wp', array($this, 'loadMobileFrontend'), 15);
+        }
+
+        public function loadMobileFrontend()
+        {
+            if ($this->detector->isMobile()) {
+                $this->frontend = Frontend::getInstance();
+                add_action('template_redirect', array($this->frontend, 'init'));
+            }
         }
     }
 }

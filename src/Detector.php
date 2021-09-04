@@ -83,22 +83,10 @@ class Detector
             add_filter('jankx/device/is_mobile/pre', '__return_true');
             add_filter('jankx/device/is_mobile/template', '__return_true');
 
-            add_filter(
-                'jankx/template/tag/html/classes',
-                array($this, 'appendMobileLayoutToHtmlClass')
-            );
-
             $debug = new DebugMode();
             if ($debug->isDebug()) {
                 add_filter('template_include', array($debug, 'includeDebugTemplate'), 555);
             }
         }
-    }
-
-    public function appendMobileLayoutToHtmlClass($classes)
-    {
-        $classes[] = 'jankx-mobile';
-
-        return $classes;
     }
 }

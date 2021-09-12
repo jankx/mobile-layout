@@ -66,8 +66,8 @@ class Detector
     public function getStatus()
     {
         foreach ($this->detectors as $detector) {
-            if ($detector->detect()) {
-                return true;
+            if (($device = $detector->detect())) {
+                return $device;
             }
         }
         return false;
@@ -79,14 +79,16 @@ class Detector
             return;
         }
 
-        if (($this->isMobile = $this->getStatus())) {
-            add_filter('jankx/device/is_mobile/pre', '__return_true');
-            add_filter('jankx/device/is_mobile/template', '__return_true');
+        switch($this->isMobile = $this->getStatus()) {
+            case 'm':
+                add_filter('jankx/device/is_mobile/pre', '__return_true');
+                add_filter('jankx/device/is_mobile/template', '__return_true');
+                break;
+        }
 
-            $debug = new DebugMode();
-            if ($debug->isDebug()) {
-                add_filter('template_include', array($debug, 'includeDebugTemplate'), 555);
-            }
+        $debug = new DebugMode();
+        if ($this->isMobile && $debug->isDebug()) {
+            add_filter('template_include', array($debug, 'includeDebugTemplate'), 555);
         }
     }
 }

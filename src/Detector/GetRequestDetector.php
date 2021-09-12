@@ -10,6 +10,11 @@ class GetRequestDetector extends Detector
         if (!isset($_GET['view'])) {
             return false;
         }
-        return $_GET['view'] === 'm';
+
+        if (in_array($_GET['view'], array('m', 'd', 't'))) {
+            return $_GET['view'];
+        }
+
+        return 'd';
     }
 }

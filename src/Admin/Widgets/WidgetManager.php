@@ -113,8 +113,12 @@ class WidgetManager
         }
 
         // Verify nonce to ensure user update widget via WordPress admin
-        if ($queries['jankx-widgets-mode'] !== 'mobile' || !wp_verify_nonce(trim($queries['_wpnonce']), static::NONCE_MODE_KEY)) {
+        if ($queries['jankx-widgets-mode'] !== 'mobile') {
             return $value;
+        }
+
+        if (!wp_verify_nonce(trim($queries['_wpnonce']), static::NONCE_MODE_KEY)) {
+            return $old_value;
         }
 
         // Save mobile widgets

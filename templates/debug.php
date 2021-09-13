@@ -31,7 +31,7 @@
             box-shadow: 0 0 10px 0;
         }
         .preview-container {
-            max-width: 400px;
+            max-width: 375px;
             height: 100vh;
             margin: 0 auto;
             position: relative;

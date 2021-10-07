@@ -3,7 +3,7 @@ namespace Jankx\MobileLayout\Frontend;
 
 use Jankx;
 use Jankx\Template\Template;
-use Jankx\TemplateLoader as CoreTemplateLoader;
+use Jankx\TemplateAndLayout;
 
 class TemplateLoader
 {
@@ -25,7 +25,7 @@ class TemplateLoader
     protected function renderByCore($templates, $data = array(), $echo = true)
     {
         if (is_null(static::$coreEngine)) {
-            static::$coreEngine = CoreTemplateLoader::getTemplateEngine();
+            static::$coreEngine = TemplateAndLayout::getTemplateEngine();
         }
         return static::$coreEngine->render($templates, $data, $echo);
     }
